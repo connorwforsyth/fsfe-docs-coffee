@@ -5,10 +5,14 @@
 </head>
 </head>
 <body>
+    <pre>Welcome to <span id="domain">docs.coffee</span></pre>
 </body>
 <script>
     let ws;
-    const proto = window.location.protocol === 'https' ? 'wss' : 'ws';
+    let domainName = window.location.host;
+    let domain = document.getElementById('domain');
+    domain.innerHTML = domainName;
+    const proto = window.location.protocol === 'https:' ? 'wss' : 'ws';
 
     ws = new WebSocket(`${proto}://${window.location.host}`);
 
